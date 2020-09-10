@@ -1,5 +1,5 @@
 try:
-import gc
+    import gc
 import time
 
 import esp
@@ -11,13 +11,13 @@ import webrepl
 from machine import I2C, Pin
 
 except:
-    import socket
-    import gc
-    import network
-    import time
-    import esp
-    from machine import Pin, I2C
-    import BME280
+import socket
+import gc
+import network
+import time
+import esp
+from machine import Pin, I2C
+import BME280
 
 network.WLAN(network.AP_IF).active(False)
 sta_if = network.WLAN(network.STA_IF)
