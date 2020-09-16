@@ -1,29 +1,30 @@
 try:
     import gc
-import time
-
-import esp
-
-import BME280
-import network
-import usocket as socket
-import webrepl
-from machine import I2C, Pin
+    import time
+    import esp
+    import BME280
+    import network
+    import usocket as socket
+    import webrepl
+    from machine import I2C, Pin
+	from configi import ssid, passw
 
 except:
-import socket
-import gc
-import network
-import time
-import esp
-from machine import Pin, I2C
-import BME280
+    import socket
+    import gc
+    import network
+    import time
+    import esp
+    from machine import Pin, I2C
+    import BME280
+    import usocket as socket
+    
 
 network.WLAN(network.AP_IF).active(False)
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
 sta_if.config(dhcp_hostname="termometr")
-sta_if.connect('dino', 'Krol')
+sta_if.connect(ssid, passw)
 count = 0
 
 while not sta_if.isconnected():
