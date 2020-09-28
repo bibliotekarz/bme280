@@ -1,0 +1,2 @@
+ssid = 'wifi'
+passw = 'free'
